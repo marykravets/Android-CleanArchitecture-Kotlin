@@ -22,6 +22,7 @@ import com.fernandocejas.sample.R
 import com.fernandocejas.sample.core.extension.inflate
 import com.fernandocejas.sample.core.extension.loadFromUrl
 import com.fernandocejas.sample.core.navigation.Navigator
+import com.fernandocejas.sample.features.movies.view.MovieView
 import kotlinx.android.synthetic.main.row_movie.view.*
 import javax.inject.Inject
 import kotlin.properties.Delegates

@@ -16,18 +16,20 @@
 package com.fernandocejas.sample.features.movies
 
 import com.fernandocejas.sample.UnitTest
-import com.fernandocejas.sample.features.movies.MoviesRepository.Network
+import com.fernandocejas.sample.features.movies.api.MoviesRepository.Network
 import com.fernandocejas.sample.core.exception.Failure.NetworkConnection
 import com.fernandocejas.sample.core.exception.Failure.ServerError
 import com.fernandocejas.sample.core.extension.empty
 import com.fernandocejas.sample.core.functional.Either
-import com.fernandocejas.sample.core.functional.Either.Left
 import com.fernandocejas.sample.core.functional.Either.Right
 import com.fernandocejas.sample.core.platform.NetworkHandler
+import com.fernandocejas.sample.features.movies.api.MoviesRepository
+import com.fernandocejas.sample.features.movies.api.MoviesService
+import com.fernandocejas.sample.features.movies.entity.MovieDetailsEntity
+import com.fernandocejas.sample.features.movies.entity.MovieEntity
 import com.nhaarman.mockito_kotlin.given
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyZeroInteractions
-import org.amshove.kluent.shouldBe
 import org.amshove.kluent.shouldBeInstanceOf
 import org.amshove.kluent.shouldEqual
 import org.junit.Before

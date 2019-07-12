@@ -13,23 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.sample.features.movies
+package com.fernandocejas.sample.features.movies.api
 
-import android.os.Parcel
-import com.fernandocejas.sample.core.platform.KParcelable
-import com.fernandocejas.sample.core.platform.parcelableCreator
+import com.fernandocejas.sample.features.movies.entity.MovieDetailsEntity
+import com.fernandocejas.sample.features.movies.entity.MovieEntity
+import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Path
 
-data class MovieView(val id: Int, val poster: String) : KParcelable {
+internal interface MoviesApi {
     companion object {
-        @JvmField val CREATOR = parcelableCreator(::MovieView)
+        private const val PARAM_MOVIE_ID = "movieId"
+        private const val MOVIES = "movies.json"
+        private const val MOVIE_DETAILS = "movie_0{$PARAM_MOVIE_ID}.json"
     }
 
-    constructor(parcel: Parcel) : this(parcel.readInt(), parcel.readString())
-
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        with(dest) {
-            writeInt(id)
-            writeString(poster)
-        }
-    }
+    @GET(MOVIES) fun movies(): Call<List<MovieEntity>>
+    @GET(MOVIE_DETAILS) fun movieDetails(@Path(PARAM_MOVIE_ID) movieId: Int): Call<MovieDetailsEntity>
 }

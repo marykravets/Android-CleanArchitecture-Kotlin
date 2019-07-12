@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.sample.features.movies
+package com.fernandocejas.sample.features.movies.view
 
-import android.arch.lifecycle.MutableLiveData
-import com.fernandocejas.sample.core.interactor.UseCase.None
-import com.fernandocejas.sample.core.platform.BaseViewModel
-import javax.inject.Inject
+import android.os.Parcel
+import com.fernandocejas.sample.core.platform.KParcelable
+import com.fernandocejas.sample.core.platform.parcelableCreator
 
-class MoviesViewModel
-@Inject constructor(private val getMovies: GetMovies) : BaseViewModel() {
+data class MovieView(val id: Int, val poster: String) : KParcelable {
+    companion object {
+        @JvmField val CREATOR = parcelableCreator(::MovieView)
+    }
 
-    var movies: MutableLiveData<List<MovieView>> = MutableLiveData()
+    constructor(parcel: Parcel) : this(parcel.readInt(), parcel.readString())
 
-    fun loadMovies() = getMovies(None()) { it.either(::handleFailure, ::handleMovieList) }
-
-    private fun handleMovieList(movies: List<Movie>) {
-        this.movies.value = movies.map { MovieView(it.id, it.poster) }
+    override fun writeToParcel(dest: Parcel, flags: Int) {
+        with(dest) {
+            writeInt(id)
+            writeString(poster)
+        }
     }
 }

@@ -26,7 +26,7 @@ import android.widget.ImageView
 import com.fernandocejas.sample.features.login.Authenticator
 import com.fernandocejas.sample.features.login.LoginActivity
 import com.fernandocejas.sample.features.movies.MovieDetailsActivity
-import com.fernandocejas.sample.features.movies.MovieView
+import com.fernandocejas.sample.features.movies.view.MovieView
 import com.fernandocejas.sample.features.movies.MoviesActivity
 import com.fernandocejas.sample.core.extension.empty
 import javax.inject.Inject

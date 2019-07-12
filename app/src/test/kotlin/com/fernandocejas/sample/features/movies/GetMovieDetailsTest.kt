@@ -17,6 +17,8 @@ package com.fernandocejas.sample.features.movies
 
 import com.fernandocejas.sample.UnitTest
 import com.fernandocejas.sample.core.functional.Either.Right
+import com.fernandocejas.sample.features.movies.api.GetMovieDetails
+import com.fernandocejas.sample.features.movies.api.MoviesRepository
 import com.nhaarman.mockito_kotlin.given
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions

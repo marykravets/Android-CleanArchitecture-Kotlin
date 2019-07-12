@@ -18,6 +18,7 @@ package com.fernandocejas.sample.features.movies
 import android.content.Context
 import android.content.Intent
 import com.fernandocejas.sample.core.platform.BaseActivity
+import com.fernandocejas.sample.features.movies.view.MovieView
 
 class MovieDetailsActivity : BaseActivity() {
 

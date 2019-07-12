@@ -21,7 +21,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
 import com.fernandocejas.sample.core.platform.BaseFragment
 import com.fernandocejas.sample.R
-import com.fernandocejas.sample.features.movies.MovieFailure.ListNotAvailable
+import com.fernandocejas.sample.features.movies.api.MovieFailure.ListNotAvailable
 import com.fernandocejas.sample.core.exception.Failure
 import com.fernandocejas.sample.core.exception.Failure.NetworkConnection
 import com.fernandocejas.sample.core.exception.Failure.ServerError
@@ -31,6 +31,8 @@ import com.fernandocejas.sample.core.extension.observe
 import com.fernandocejas.sample.core.extension.viewModel
 import com.fernandocejas.sample.core.extension.visible
 import com.fernandocejas.sample.core.navigation.Navigator
+import com.fernandocejas.sample.features.movies.view.MovieView
+import com.fernandocejas.sample.features.movies.viewmodel.MoviesViewModel
 import kotlinx.android.synthetic.main.fragment_movies.emptyView
 import kotlinx.android.synthetic.main.fragment_movies.movieList
 import javax.inject.Inject
